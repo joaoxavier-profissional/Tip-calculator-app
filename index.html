@@ -21,7 +21,7 @@
   <main>
     <div class="bill-container">
       <label for="">Bill</label>
-      <input type="number">
+      <input type="number" id="bill">
     </div>
     <div class="tip-container">
       <label class="label-tip" for="">Select Tip %</label>
@@ -31,12 +31,12 @@
         <button>15%</button>
         <button>25%</button>
         <button>50%</button>
-        <button>custom</button>
+        <input type="number">
       </div>
     </div>
     <div class="number-container">
       <label for="">Number of People</label>
-      <input type="text">
+      <input type="number" id="people">
     </div>
     <div class="amount-container">
       <span>
@@ -44,16 +44,16 @@
           <div>Tip Amount</div>
           <p>/ person</p>
         </div>
-        <h1></h1>
+        <h1 id="tip-per-person">$0.00</h1>
       </span>
       <span>
         <div>
           <div>Total</div>
           <p>/ person</p>
         </div>
-        <h1></h1>
+        <h1 id="total-per-person">$0.00</h1>
       </span>
-      <button>Reset</button>
+      <button id="btn-reset">Reset</button>
     </div>
   </main>
   

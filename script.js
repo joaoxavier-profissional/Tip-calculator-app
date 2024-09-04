@@ -1,15 +1,62 @@
-var lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-let soma = 0;
-let media = 0;
-let i = 0;
+const bill = document.getElementById('bill');
+const buttons = document.querySelectorAll('.tip-container div button');
+const people = document.getElementById('people');
+const btnReset = document.getElementById('btn-reset');
+const tipPerPerson = document.getElementById('tip-per-person');
+const totalPerPerson = document.getElementById('total-per-person');
 
-for(lista.length < 11; i < 10; i++) {
-    soma = soma + lista[i];
-    media = soma / lista.length;
-    if(lista[i] > 10) {
-        console.log(i);
-    }
-}
+let billValue, porcentagem, peopleValue;
 
-console.log(soma);
-console.log(media);
+bill.addEventListener('input', function() {
+    billValue = bill.value;
+    billValue = parseInt(billValue);
+    console.log(billValue); // Exibe o valor no console sempre que o input mudar
+    return billValue;
+});
+
+buttons.forEach(button => {
+    button.addEventListener('click', function(){
+        buttons.forEach(btn => btn.classList.remove('active')); //Remove a classe de todos os botoes
+        this.classList.add('active'); //Adiciona para o botao clicado
+        porcentagem = this.innerHTML;
+        porcentagem = porcentagem.slice(0, -1) + ' ';
+        porcentagem *= 0.01;
+        console.log(porcentagem);
+        return porcentagem;
+    })
+})
+
+people.addEventListener('input', function() {
+    peopleValue = people.value;
+    peopleValue = parseInt(peopleValue);
+    console.log(peopleValue); // Exibe o valor no console sempre que o input mudar
+    return peopleValue;
+});
+
+document.querySelectorAll('input').forEach(function (input) {
+    input.addEventListener('change', function() {
+        billValue;
+        porcentagem;
+        peopleValue;
+
+        console.log(porcentagem);
+
+        let calcTipPerPerson = (billValue * porcentagem) / peopleValue;
+
+        let calcTotalPerPerson = billValue / peopleValue;
+
+        tipPerPerson.textContent = "$" + calcTipPerPerson.toFixed(2);
+        totalPerPerson.textContent = "$" + calcTotalPerPerson.toFixed(2);
+    })
+})
+
+btnReset.addEventListener('click', function() {
+    bill.value = 0;
+    buttons.forEach(btn => btn.classList.remove('active'))
+    porcentagem = 0;
+    people.value = 0;
+
+    tipPerPerson.textContent = "$0.00";
+    totalPerPerson.textContent = "$0.00";
+});
+

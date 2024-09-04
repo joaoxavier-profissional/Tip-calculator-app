@@ -20,11 +20,171 @@
 }
 
 body {
-    background: var(--grayishCyan);
+    background: var(--lightGrayishCyan);
 }
 
 .attribution {
     display: none;
+}
+
+@media (min-width: 501px){
+    body {
+        background: var(--lightGrayishCyan);
+        display: flex;
+        flex-direction: column;
+        height: 90vh;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    img {
+        max-width: 100px;
+        margin-bottom: 3rem;
+    }
+    
+    main {
+        background: var(--white);
+        padding: 1.5rem;
+        border-radius: 1rem;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        max-width: 1000px;
+    }
+
+    .bill-container, .tip-container, .number-container{
+        margin-right: 1.5rem;
+    }
+
+    .bill-container {
+        grid-column: 1 / 2;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bill-container label {
+        margin-bottom: 0.5rem;
+    }
+
+    .bill-container input {
+        padding: 0.875rem;
+        background: var(--veryLightGrayishCyan);
+        border-radius: 4px;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        text-align: end;
+        font-size: 1.5rem;
+    }
+
+    .tip-container {
+        grid-column: 1 / 2;
+    }
+
+    .tip-container label {
+        margin-bottom: 0.5rem;
+    }
+
+    .tip-container div {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-rows: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .tip-container div button{
+        background: var(--veryDarkCyan);
+        color: var(--white);
+        border-radius: 4px;
+        padding: 0.5rem;
+        font-size: 1.5rem;
+    }
+
+    .tip-container div button:hover{
+        background: var(--strongCyan);
+        cursor: pointer;
+    }
+
+    .tip-container div button.active {
+        background: var(--strongCyan);
+    }
+
+    .tip-container div input {
+        background: var(--veryLightGrayishCyan);
+        padding: 0.5rem;
+        border-radius: 4px;
+        text-align: end;
+        font-size: 1.5rem;
+    }
+
+    .number-container {
+        grid-column: 1 / 2;
+    }
+
+    .amount-container {
+        grid-column: 2 / 3;
+        grid-row: 1 / 4;
+        
+    }
+
+    .number-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .number-container label {
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .number-container input {
+        background: var(--veryLightGrayishCyan);
+        border-radius: 4px;
+        padding: 0.875rem;
+        text-align: end;
+        font-size: 1.5rem;
+    }
+
+    .amount-container {
+        background: var(--veryDarkCyan);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .amount-container span {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+    }
+
+    .amount-container span div {
+        color: white;
+    }
+
+    .amount-container span div p {
+        color: var(--grayishCyan);
+        font-weight: normal;
+    }
+
+    .amount-container span h1 {
+        font-size: 2.5rem;
+        color: var(--strongCyan);
+    }
+
+    .amount-container button {
+        margin-top: auto;
+        padding: 1em;
+        border-radius: 4px;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        color: var(--veryDarkCyan);
+        background: var(--strongCyan);
+    }
+
+    .amount-container button:hover {
+        background: var(--veryLightGrayishCyan);
+        cursor: pointer;
+    }
 }
 
 
@@ -44,7 +204,7 @@ body {
     main {
         background: var(--white);
         padding: 1.5rem;
-        border-radius: 1.5rem;
+        border-radius: 1.5rem 1.5rem 0 0;
     }
     .bill-container{
         display: flex;
@@ -58,21 +218,32 @@ body {
         background: var(--veryLightGrayishCyan);
         padding: 0.875rem;
         border-radius: 4px;
+        text-align: end;
+        font-size: 1.5rem;
     }
     .tip-container {
         margin-bottom: 1.5rem;
     }
     .tip-container > div {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
         gap: 1rem;
     }
     .tip-container button {
         padding: 0.5rem;
         border-radius: 4px;
         font-size: 1.5rem;
-        background: var(--darkGrayishCyan);
+        background: var(--veryDarkCyan);
         color: var(--white);
+    }
+    .tip-container button:hover{
+        background: var(--strongCyan);
+    }
+    .tip-container input {
+        background: var(--veryLightGrayishCyan);
+        border-radius: 4px;
+        text-align: end;
+        font-size: 1.5rem;
     }
     .number-container {
         display: flex;
@@ -83,26 +254,36 @@ body {
         padding: 0.875rem;
         border-radius: 4px;
         margin-bottom: 1.5rem;
+        text-align: end;
+        font-size: 1.5rem;
     }
     .amount-container {
-        background: var(--darkGrayishCyan);
+        background: var(--veryDarkCyan);
         display: flex;
         flex-direction: column;
         border-radius: 1.5rem;
         padding: 1.5rem;
     }
+    .amount-container span {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+    }
     .amount-container span div {
         color: white;
     }
+    .amount-container span h1 {
+        color: var(--strongCyan);
+    }
     .amount-container span div p {
         color: var(--lightGrayishCyan);
-        font-weight: normal;
+        font-weight: lighter;
     }
     .amount-container button {
         padding: 1rem;
         font-size: 1.5rem;
         text-transform: uppercase;
-        color: var(--darkGrayishCyan);
+        color: var(--veryDarkCyan);
         border-radius: 4px;
         margin-top: 1rem;
         background: var(--strongCyan);
