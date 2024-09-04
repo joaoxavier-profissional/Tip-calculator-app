@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    color: black;
+    font-family: "Space Mono", monospace;
+    font-weight: bold;
+}
+
+:root {
+    --strongCyan: hsl(172, 67%, 45%);
+
+    --veryDarkCyan: hsl(183, 100%, 15%);
+    --darkGrayishCyan: hsl(186, 14%, 43%);
+    --grayishCyan: hsl(184, 14%, 56%);
+    --lightGrayishCyan: hsl(185, 41%, 84%);
+    --veryLightGrayishCyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+}
+
+body {
+    background: var(--grayishCyan);
+}
+
+.attribution {
+    display: none;
+}
+
+
+@media (max-width: 500px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    img {
+        max-width: 100px;
+        margin: 0 auto;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    main {
+        background: var(--white);
+        padding: 1.5rem;
+        border-radius: 1.5rem;
+    }
+    .bill-container{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+    .bill-container > label {
+        margin-bottom: 0.5rem;
+    }
+    .bill-container > input {
+        background: var(--veryLightGrayishCyan);
+        padding: 0.875rem;
+        border-radius: 4px;
+    }
+    .tip-container {
+        margin-bottom: 1.5rem;
+    }
+    .tip-container > div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+    .tip-container button {
+        padding: 0.5rem;
+        border-radius: 4px;
+        font-size: 1.5rem;
+        background: var(--darkGrayishCyan);
+        color: var(--white);
+    }
+    .number-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .number-container input {
+        background: var(--veryLightGrayishCyan);
+        padding: 0.875rem;
+        border-radius: 4px;
+        margin-bottom: 1.5rem;
+    }
+    .amount-container {
+        background: var(--darkGrayishCyan);
+        display: flex;
+        flex-direction: column;
+        border-radius: 1.5rem;
+        padding: 1.5rem;
+    }
+    .amount-container span div {
+        color: white;
+    }
+    .amount-container span div p {
+        color: var(--lightGrayishCyan);
+        font-weight: normal;
+    }
+    .amount-container button {
+        padding: 1rem;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        color: var(--darkGrayishCyan);
+        border-radius: 4px;
+        margin-top: 1rem;
+        background: var(--strongCyan);
+    }
+}
